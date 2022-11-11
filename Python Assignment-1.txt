@@ -1,4 +1,5 @@
 ## Assignment Part-1
+
 Q1. Why do we call Python as a general purpose and high-level programming language?
 Ans. Python is written in almost english words following syntax and semantics of programming language. it supports
 both procedural way and Object oriented way of programming.
