@@ -1,0 +1,168 @@
+## Assignment Part-1
+Q1. Why do we call Python as a general purpose and high-level programming language?
+Ans. Python is written in almost english words following syntax and semantics of programming language. it supports
+both procedural way and Object oriented way of programming.
+
+Q2. Why is Python called a dynamically typed language?
+Ans. it is not mandatory to declare or specify data type of a variable. variable's data type is determined during run time. 
+
+Q3. List some pros and cons of Python programming language?
+Ans. pros :- 
+	a) it has very big collection of packages which makes easy to work on different domain
+	b) It is easy to learn and Very productive and an interpreted language
+       cons:-
+	a) Python takes more time to execute as the code is interpreted in runtime.
+	b) As Variable datatype is determined during runtime, it is more prone to get Runtime Error
+
+Q4. In what all domains can we use Python?
+Ans. Python is highly used in Data Science , Data Analysis and Data Engineering Domain. It is
+also used in Web Development, IOT and Network Programming.
+
+Q5. What are variable and how can we declare them?
+Ans. Variable is an identifier given to value to identify and compute over in a program. 
+ Syntax : (variable) a  = 10 (Value)
+
+Q6. How can we take an input from the user in Python?
+Ans. we can use Python Keyword input to take user input from the console.
+
+Q7. What is the default datatype of the value that has been taken as an input using input() function?
+Ans. the default data type of value taken from Input function is STR i.e. text type.
+
+Q8. What is type casting?
+Ans. it is a method where programmer can assign datatype to a variable to do desirable operation in the program.
+
+Q9. Can we take more than one input from the user using single input() function? If yes, how? If no, why?
+Ans. Yes, we can take multiple inputs using input function.
+	ex :-  a,b = input().split()
+
+Q10. What are keywords?
+Ans. keywords are builtin reserved words which are designed to perform some specific steps
+which may or may not have a return value
+
+Q11. Can we use keywords as a variable? Support your answer with reason.
+Ans. We can't use keywords as a variable as they have a operation property defined to them.
+For same reason, it may create unexpected behavior in program. To avoid this, we can create own 
+non-keyword identifiers, function name or methods.
+
+Q12. What is indentation? What's the use of indentaion in Python?
+Ans. indentation is 2-4 spaces given to the code structure to know the
+code flow and body structure under function -def ,class, if, for .. etc 
+to improve the readability.
+
+
+Q13. How can we throw some output in Python?
+Ans. we can use print function to display the results/output in the console
+
+
+Q14. What are operators in Python?
+Ans. Operators in Python are A
+	a) Arithmetic :- +,-,/,//,%, etc 
+	b) assignment :- = , += , -=, /= , %= , etc
+	c) comparison :- ==, =<, <=, etc
+	d) Logical :- and/or/not
+	e) bitwise :- & , | ,<< , >>
+
+Q15. What is difference between / and // operators?
+Ans. / is float division which gives decimal point with integer value.  eg :- 6/2 = 3.0
+// is integer division which returns only integer value eg :- 6/2 = 3
+
+Q16. Write a code that gives following as an output.
+```
+iNeuroniNeuroniNeuroniNeuron
+```
+Ans. 	s1 = "iNeuron"
+	print(s1*4)
+
+Q17. Write a code to take a number as an input from the user and check if the number is odd or even.
+Ans. 	number = int(input("Enter a number: "))
+	if number%2 ==0:
+    	    print("Number is Even")
+	else :
+    	    print("Number is Odd")
+
+Q18. What are boolean operator?
+Ans. These operator are logical operators which are and/not/or.
+ 0 and 1 = False
+ 0 or 1 = True
+ not 1 = False
+
+Q19. What will the output of the following?
+```
+1 or 0
+
+0 and 0
+
+True and False and True
+
+1 or 0 or 0
+
+Ans. 
+
+1 or 0 = True
+0 and 0 = False
+True and False ad True = False
+1 or 0 or 0 = True
+
+Q20. What are conditional statements in Python?
+Ans. Conditional Statements are statements which are used to make 
+decisions based on the constraints/values
+
+Q21. What is use of 'if', 'elif' and 'else' keywords?
+Ans. These keywords are used to frame conditions required to get expected output. 
+	Eg :
+		if age <20 :
+		   person is child
+		elif age>=20 and age<=60 :
+		    person is adult
+		else:
+		    person is senior citizen
+
+Q22. Write a code to take the age of person as an input and if age >= 18 display "I can vote". If age is < 18 display "I can't vote".
+Ans. 
+	age = int(input("Enter a number: "))
+	if age>=18:
+    	    print("I can vote")
+	else :
+   	   print("I can't Vote")
+
+Q23. Write a code that displays the sum of all the even numbers from the given list.
+```
+numbers = [12, 75, 150, 180, 145, 525, 50]
+```
+Ans. 	num = [12, 75, 150, 180, 145, 525, 50]
+	sum1 = 0
+	for i in num:
+    	     if i%2==0:
+        	          sum1+=i
+	print(sum1)
+
+
+Q24. Write a code to take 3 numbers as an input from the user and display the greatest no as output.
+Ans.  	x,y,z = input("Enter your input: ").split()
+	if x>y and x>z :
+   	    print(f" {x} is greatest ")
+	elif y>x and y>z :
+ 	    print(f" {y} is greatest ")
+	else:
+	    print(f" {z} is greatest ")
+
+Q25. Write a program to display only those numbers from a list that satisfy the following conditions
+
+- The number must be divisible by five
+
+- If the number is greater than 150, then skip it and move to the next number
+
+- If the number is greater than 500, then stop the loop
+```
+numbers = [12, 75, 150, 180, 145, 525, 50]
+```
+
+Ans. num = [12, 75, 150, 155, 180, 145, 525, 50]
+
+for i in num:
+    if i%5==0 and i>500:
+        print(f"{i} is stopped ")
+        break
+    elif i%5==0 and i>150:
+        print(f"{i} is skipped ")
+    
