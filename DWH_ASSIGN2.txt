@@ -1,0 +1,102 @@
+Scenario - 1 :-
+
+Question 1. What are the strengths and weaknesses of each option?
+Ans. 
+
+option 1 -   strength - the model can hold team course instructors in place.
+            easy to extract information for shared course instructors
+
+            weaknesses - for this option, we need to change the instructor dimension
+            with a not - compatible row of data for shared instructors
+
+option 2 -  strength - detailed data for each team instructor course, we can know how 
+            many instructor are assigned to a course.
+
+            weaknesses - if we see broadly, data rows will be very high to store in 
+            DWH with most of the common values. (Redundancy)
+
+
+option 3 -  strength - separation of fact tables will be helpful for different 
+            scenarios
+
+            weakness - will not get instructor details from 1st fact table which 
+            may not be proper to lose information.
+
+
+
+Question 2. Which option would you choose and why?
+Ans.  i would choose 2, considering this scenario where only 4% of courses
+        have shared instructors.
+
+        Reason :- we are following the rules of all tables and not changing 
+        it's structure in any way.
+        it will be more convinient to store values in divided Enrollment Count.
+
+
+
+
+Question 3. Would your answer to Question 2 be different if the majority of classes had multiple instructors? How
+about if only one or two classes had multiple instructors? (Explain your answer.)
+Ans.  if majority of classes had shared instructors then would have chosen option 1 as 
+        it wont overload DWH with redundant data.
+      if 1-2 classes had shared instructors, then i would have still chosen option2
+
+
+
+
+Question 4. [OPTIONAL] Can you think of another reasonable alternative design besides Options A, B, and C? If
+so, what are the advantages and disadvantages of your alternative design?
+Ans.
+    Not Sure
+
+
+
+
+
+Scenario - 2 :-
+
+Question 5. What are the strengths and weaknesses of each option?
+Ans. 
+    Option1 :- 
+        strength :- data is updated with time so it wont consume much space over time. 
+
+        weakness- we will lose old data which may not be helpful to check the statistics over 
+        a period of time.
+
+    option2 :-
+        strength - we can hold data for a retention period so that we wont lose important 
+        data to check statistics or growth over a period. 
+
+        weakness -  data will be very much high to store in DWH for so many users with 
+            multiple stock trade.
+
+    option3 :- 
+        strength - It is a good way to use primary key - foreign key to attach it the 
+            customer for it's respective changing value as needed. 
+
+        weakness - Not Sure
+
+    Option4 :- 
+        strength - It is a good way to use primary key - foreign key to attach it the 
+            customer for it's respective changing value as needed. 
+
+        weakness - Customer Scores table is not involved in fact-table, which 
+                may not be a suitable data model.
+
+Question 6. Which option would you choose and why?
+Ans. Would choose option - 3 , as scores are available in fact table and any one 
+can easily understand and relate to the changes in customer data.
+
+Question 7. Would your answer to Question 6 be different if the number of customers and/or the time interval
+between score recalculations was much larger or much smaller? (Explain your answer.)
+Ans. Would choose option - 3 , as scores are available in fact table and any one 
+can easily understand and relate to the changes in customer data.
+
+
+Question 8. [OPTIONAL] Can you think of another reasonable alternative design besides Options A, B, C, and D?
+If so, what are the advantages and disadvantages of your alternative design?
+Ans.  Not Sure
+
+
+
+
