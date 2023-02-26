@@ -6,3 +6,12 @@ create database my_db;
 
 #use hive db
 use my_db;
+
+#to check DWH location in HDFS (hadoop)
+abc@994915bf825e:~/workspace$ hadoop fs -ls /
+Found 2 items
+drwx-wx-wx   - abc supergroup          0 2023-02-26 13:42 /tmp
+drwxr-xr-x   - abc supergroup          0 2023-02-26 13:46 /user
+abc@994915bf825e:~/workspace$ hadoop fs -ls /user
+Found 1 items
+drwxr-xr-x   - abc supergroup          0 2023-02-26 13:46 /user/hive
