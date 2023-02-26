@@ -131,7 +131,20 @@ Time taken: 28.911 seconds
 Perform below menioned queries on "sales_order_orc" table :
 
 a. Calculatye total sales per year
+ans. 
+hive>  select sum(sales) as total_sales , year_id  from sales_order_data_internal_orc group by year_id;
+OUTPUT:- 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 4.94 sec   HDFS Read: 44477 HDFS Write: 193 SUCCESS
+Total MapReduce CPU Time Spent: 4 seconds 940 msec
+OK
+total_sales            year_id
+3516979.547241211       2003
+4724162.593383789       2004
+1791486.7086791992      2005
+Time taken: 25.273 seconds, Fetched: 3 row(s)
+
 b. Find a product for which maximum orders were placed
+Ans. 
 c. Calculate the total sales for each quarter
 d. In which quarter sales was minimum
 e. In which country sales was maximum and in which country sales was minimum
