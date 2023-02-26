@@ -1,8 +1,20 @@
 1. Download vechile sales data -> https://github.com/shashank-mishra219/Hive-Class/blob/main/sales_order_data.csv
+Ans. 
+abc@994915bf825e:~/workspace$ ls
+array_data.csv  depart_data.csv  map_data.csv  README.md  sales_order_data.csv
 
 2. Store raw data into hdfs location
+Ans. 
+abc@994915bf825e:~/workspace$ hadoop fs -put sales_order_data.csv /tmp
+2023-02-26 16:21:50,225 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+
+abc@994915bf825e:~/workspace$ hadoop fs -ls /tmp
+Found 2 items
+drwx-wx-wx   - abc supergroup          0 2023-02-26 13:43 /tmp/hive
+-rw-r--r--   1 abc supergroup     357410 2023-02-26 16:21 /tmp/sales_order_data.csv
 
 3. Create a internal hive table "sales_order_csv" which will store csv data sales_order_csv .. make sure to skip header row while creating table
+Ans.
 
 4. Load data from hdfs path into "sales_order_csv" 
 
