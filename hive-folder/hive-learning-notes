@@ -38,3 +38,98 @@ abc@994915bf825e:~/workspace$ hadoop fs -ls /tmp
 Found 2 items
 -rw-r--r--   1 abc supergroup        655 2023-02-26 14:21 /tmp/depart_data.csv
 drwx-wx-wx   - abc supergroup          0 2023-02-26 13:43 /tmp/hive
+
+abc@994915bf825e:~/workspace$ hadoop fs -ls /user/hive/
+Found 1 items
+drwxr-xr-x   - abc supergroup          0 2023-02-26 13:46 /user/hive/warehouse
+abc@994915bf825e:~/workspace$ hadoop fs -ls /user/hive/warehouse
+Found 1 items
+drwxr-xr-x   - abc supergroup          0 2023-02-26 14:31 /user/hive/warehouse/my_db.db
+abc@994915bf825e:~/workspace$ hadoop fs -ls /user/hive/warehouse/my_db.db
+Found 1 items
+drwxr-xr-x   - abc supergroup          0 2023-02-26 14:31 /user/hive/warehouse/my_db.db/department_data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
