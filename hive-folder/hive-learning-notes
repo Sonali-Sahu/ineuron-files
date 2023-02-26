@@ -1,1 +1,8 @@
 # check databases list
+show databases;
+
+# create database 
+create database my_db;
+
+#use hive db
+use my_db;
