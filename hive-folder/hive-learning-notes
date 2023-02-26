@@ -15,3 +15,9 @@ drwxr-xr-x   - abc supergroup          0 2023-02-26 13:46 /user
 abc@994915bf825e:~/workspace$ hadoop fs -ls /user
 Found 1 items
 drwxr-xr-x   - abc supergroup          0 2023-02-26 13:46 /user/hive
+abc@994915bf825e:~/workspace$ hadoop fs -ls /user/hive
+Found 1 items
+drwxr-xr-x   - abc supergroup          0 2023-02-26 13:46 /user/hive/warehouse
+abc@994915bf825e:~/workspace$ hadoop fs -ls /user/hive/warehouse
+Found 1 items
+drwxr-xr-x   - abc supergroup          0 2023-02-26 13:46 /user/hive/warehouse/my_db.db
