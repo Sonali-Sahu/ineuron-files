@@ -54,6 +54,13 @@ Loading data to table my_db.sales_order_data_internal
 OK
 Time taken: 0.414 seconds
 
+hive> select ordernumber,quantityordered from sales_order_data_internal limit 2;
+OK
+ordernumber     quantityordered
+10107              30
+10121              34
+Time taken: 0.169 seconds, Fetched: 2 row(s)
+
 
 5. Create an internal hive table which will store data in ORC format "sales_order_orc"
 
