@@ -95,6 +95,38 @@ Time taken: 0.094 seconds
 6. Load data from "sales_order_csv" into "sales_order_orc"
 Ans. from sales_order_data_internal insert overwrite table sales_order_data_internal_orc select *;
 
+message:-
+hive> from sales_order_data_internal insert overwrite table sales_order_data_internal_orc select *;
+Query ID = abc_20230226171110_c529c755-9bcd-457f-942d-e43c7c0eca29
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1677411229374_0001, Tracking URL = http://22beac9969cc:8088/proxy/application_1677411229374_0001/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1677411229374_0001
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2023-02-26 17:11:23,626 Stage-1 map = 0%,  reduce = 0%
+2023-02-26 17:11:31,851 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 14.24 sec
+2023-02-26 17:11:38,023 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 16.54 sec
+MapReduce Total cumulative CPU time: 16 seconds 540 msec
+Ended Job = job_1677411229374_0001
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to directory hdfs://localhost/user/hive/warehouse/sales_order_data_internal_orc/.hive-staging_hive_2023-02-26_17-11-10_888_7818725022118084342-1/-ext-10000
+Loading data to table default.sales_order_data_internal_orc
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 16.54 sec   HDFS Read: 398114 HDFS Write: 50375 SUCCESS
+Total MapReduce CPU Time Spent: 16 seconds 540 msec
+OK
+sales_order_data_internal.ordernumber   sales_order_data_internal.quantityordered       sales_order_data_internal.priceeach     sales_order_data_internal.orderlinenumber     sales_order_data_internal.sales sales_order_data_internal.status        sales_order_data_internal.qtr_id        sales_order_data_internal.month_id    sales_order_data_internal.year_id       sales_order_data_internal.productline   sales_order_data_internal.msrp  sales_order_data_internal.productcode sales_order_data_internal.phone sales_order_data_internal.city  sales_order_data_internal.state sales_order_data_internal.postalcode  sales_order_data_internal.country       sales_order_data_internal.territory     sales_order_data_internal.contactlastname       sales_order_data_internal.contactfirstname    sales_order_data_internal.dealsize
+Time taken: 28.911 seconds
+
 
 Perform below menioned queries on "sales_order_orc" table :
 
