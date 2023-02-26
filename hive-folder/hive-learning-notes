@@ -50,7 +50,67 @@ Found 1 items
 drwxr-xr-x   - abc supergroup          0 2023-02-26 14:31 /user/hive/warehouse/my_db.db/department_data
 
 
-
+# hive commands 
+hive> create table department_data
+    > (
+    > dept_id int,
+    > dept_name string,
+    > manager_id int,
+    > salary int
+    > )
+    > row format delimited
+    > fields terminated by ',';
+OK
+Time taken: 0.577 seconds
+hive> show tables;
+OK
+department_data
+Time taken: 0.03 seconds, Fetched: 1 row(s)
+hive> describe department_data;
+OK
+dept_id                 int                                         
+dept_name               string                                      
+manager_id              int                                         
+salary                  int                                         
+Time taken: 0.268 seconds, Fetched: 4 row(s)
+hive> describe formatted department_data;
+OK
+# col_name              data_type               comment             
+dept_id                 int                                         
+dept_name               string                                      
+manager_id              int                                         
+salary                  int                                         
+                 
+# Detailed Table Information             
+Database:               my_db                    
+OwnerType:              USER                     
+Owner:                  abc                      
+CreateTime:             Sun Feb 26 14:31:23 IST 2023     
+LastAccessTime:         UNKNOWN                  
+Retention:              0                        
+Location:               hdfs://localhost/user/hive/warehouse/my_db.db/department_data    
+Table Type:             MANAGED_TABLE            
+Table Parameters:                
+        COLUMN_STATS_ACCURATE   {\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"dept_id\":\"true\",\"dept_name\":\"true\",\"manager_id\":\"true\",\"salary\":\"true\"}}
+        bucketing_version       2                   
+        numFiles                0                   
+        numRows                 0                   
+        rawDataSize             0                   
+        totalSize               0                   
+        transient_lastDdlTime   1677402083          
+                 
+# Storage Information            
+SerDe Library:          org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe       
+InputFormat:            org.apache.hadoop.mapred.TextInputFormat         
+OutputFormat:           org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat       
+Compressed:             No                       
+Num Buckets:            -1                       
+Bucket Columns:         []                       
+Sort Columns:           []                       
+Storage Desc Params:             
+        field.delim             ,                   
+        serialization.format    ,                   
+Time taken: 0.236 seconds, Fetched: 35 row(s)
 
 
 
