@@ -16,6 +16,37 @@ drwx-wx-wx   - abc supergroup          0 2023-02-26 13:43 /tmp/hive
 3. Create a internal hive table "sales_order_csv" which will store csv data sales_order_csv .. make sure to skip header row while creating table
 Ans.
 
+hive> create table sales_order_data_internal 
+(
+    ORDERNUMBER int,
+    QUANTITYORDERED int,
+    PRICEEACH float,
+    ORDERLINENUMBER int,
+    SALES float ,
+    STATUS string,
+    QTR_ID int,
+    MONTH_ID int,
+    YEAR_ID int,
+    PRODUCTLINE string,
+    MSRP int,
+    PRODUCTCODE string,
+    PHONE string,
+    CITY string,
+    STATE string,
+    POSTALCODE string,
+    COUNTRY string,
+    TERRITORY string,
+    CONTACTLASTNAME string,
+    CONTACTFIRSTNAME string,
+    DEALSIZE string
+)
+row format delimited
+fields terminated by ','
+tblproperties("skip.header.line.count"="1") ;
+
+OK
+Time taken: 0.119 seconds
+
 4. Load data from hdfs path into "sales_order_csv" 
 
 5. Create an internal hive table which will store data in ORC format "sales_order_orc"
