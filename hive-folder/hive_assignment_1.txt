@@ -48,6 +48,12 @@ OK
 Time taken: 0.119 seconds
 
 4. Load data from hdfs path into "sales_order_csv" 
+Ans. 
+hive> load data  inpath "/tmp/sales_order_data.csv" into table sales_order_data_internal;
+Loading data to table my_db.sales_order_data_internal
+OK
+Time taken: 0.414 seconds
+
 
 5. Create an internal hive table which will store data in ORC format "sales_order_orc"
 
