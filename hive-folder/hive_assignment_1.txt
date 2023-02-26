@@ -160,6 +160,22 @@ Time taken: 78.543 seconds, Fetched: 1 row(s)
 
 
 c. Calculate the total sales for each quarter
+ans. 
+hive> select sum(sales) as total_sales , qtr_id from sales_order_data_internal_orc group by qtr_id;
+
+output:-
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 4.85 sec   HDFS Read: 44657 HDFS Write: 216 SUCCESS
+Total MapReduce CPU Time Spent: 4 seconds 850 msec
+OK
+total_sales     qtr_id
+2350817.726501465       1
+2048120.3029174805      2
+1758910.808959961       3
+3874780.010925293       4
+Time taken: 24.2 seconds, Fetched: 4 row(s)
+
+
 d. In which quarter sales was minimum
 e. In which country sales was maximum and in which country sales was minimum
 f. Calculate quartelry sales for each city
