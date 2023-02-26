@@ -145,6 +145,20 @@ Time taken: 25.273 seconds, Fetched: 3 row(s)
 
 b. Find a product for which maximum orders were placed
 Ans. 
+hive> select count(ordernumber) as max_order_count , productline from sales_order_data_internal_orc group by productline sort by max_order_count desc limit 1;
+
+output:- 
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 4.52 sec   HDFS Read: 36225 HDFS Write: 308 SUCCESS
+Stage-Stage-2: Map: 1  Reduce: 1   Cumulative CPU: 3.97 sec   HDFS Read: 6907 HDFS Write: 129 SUCCESS
+Stage-Stage-3: Map: 1  Reduce: 1   Cumulative CPU: 4.41 sec   HDFS Read: 7553 HDFS Write: 116 SUCCESS
+Total MapReduce CPU Time Spent: 12 seconds 900 msec
+OK
+max_order_count productline
+967             Classic Cars
+Time taken: 78.543 seconds, Fetched: 1 row(s)
+
+
 c. Calculate the total sales for each quarter
 d. In which quarter sales was minimum
 e. In which country sales was maximum and in which country sales was minimum
