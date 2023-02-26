@@ -21,3 +21,20 @@ drwxr-xr-x   - abc supergroup          0 2023-02-26 13:46 /user/hive/warehouse
 abc@994915bf825e:~/workspace$ hadoop fs -ls /user/hive/warehouse
 Found 1 items
 drwxr-xr-x   - abc supergroup          0 2023-02-26 13:46 /user/hive/warehouse/my_db.db
+
+
+# command to put local csv file into hdfs 
+abc@994915bf825e:~/workspace$ hadoop fs -ls /
+Found 2 items
+drwx-wx-wx   - abc supergroup          0 2023-02-26 13:42 /tmp
+drwxr-xr-x   - abc supergroup          0 2023-02-26 13:46 /user
+abc@994915bf825e:~/workspace$ hadoop fs -put depart_data.csv /tmp
+2023-02-26 14:21:27,489 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+abc@994915bf825e:~/workspace$ ls
+depart_data.csv  README.md
+abc@994915bf825e:~/workspace$ pwd
+/config/workspace
+abc@994915bf825e:~/workspace$ hadoop fs -ls /tmp
+Found 2 items
+-rw-r--r--   1 abc supergroup        655 2023-02-26 14:21 /tmp/depart_data.csv
+drwx-wx-wx   - abc supergroup          0 2023-02-26 13:43 /tmp/hive
