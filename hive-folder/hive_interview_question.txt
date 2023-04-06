@@ -34,38 +34,166 @@ Ans.  Hive has 5 Components. They are
 
 
 5. Mention what Hive query processor does? And Mention what are the components of a Hive query processor?
-Ans. 
+Ans.  Hive query processor convert graph of mapreduce jobs with the execution time framework. so that the jobs
+can be executed in the order of dependencies.
 
-
-
-
-
-
+Components of a Hive Query Processor :-
+a. Logical Plan Generation
+b. Physical Plan Generation
+c. Executin Enginer
+d. Operators
+e. UDFs and UDAFs
+f. optimizer
+g. Parser
+h. Semantic Analyzer
+i. Type Checking
 
 6. What are the three different modes in which we can operate Hive?
+Ans. the 3 modes in which Hive Operates :-
+      . local Mode
+      . Pseudo-Distributed
+      . Full Distributed Mode
+      
 7. Features and Limitations of Hive.
+Ans. Features :-
+       a. Supported Computing Engine :- Hive Supports MapReduce, Tez and Spark Computing Engine.
+       b. Framework :- Hive is a stable batch processing framework built on the top of HDFS and can work as a data WH.
+       c. Easy to code :- Hive uses Hive Query Language to query structure data which is easy to code. 
+       d. Declarative :- HQL is a declarative language like SQL mean it is non-procedural
+       e. Structure of the table :- the table , the structure is same as SQL - RDBMS. It also supports partitioning and bucketing
+       f. Supported DataStructures :- Partition,Bucket,table are 3 data structures that hive supports
+       g. Supports ETL :- Hive supports ETL.
+       h. Storage:- Hive supports users to access files from HDFS , Apache HBase, Amazon S3.
+       i. Capable :- Hive is capable to process very large datasets of petabytes in size.
+       j. Helps in processing unstructured data :- one can easily embed custom mapreduce code with Hive to process unstructured data.
+       i. Drivers :- JDBS/ODBC drivers are also available in Hive. 
+       j. Fault Tolerance :- Since we store Hive Data on HDFS for fault tolerance is provided by Hadoop
+       k. Area of Uses :- Can be used in Data Mining, predictive modeling and document indexing.
+       
+   Limitations :- 
+       a. Does not support OLTP :- Hive does not support OLTP but only OLAP.
+       b. Doesn't support Subqueries 
+       c. Latency :- latency in Hive is very high
+       d. Only Non-real / cold data is supported :- hive is not for real time processing as it takes time to give query results.
+
 8. How to create a Database in HIVE?
+Ans. we can create a database with the help of create command:-
+            CREATE DATABASE MY_DB;
+            
+            SHOW DATABASES;
+            
 9. How to create a table in HIVE?
-10.What do you mean by describe and describe extended and describe
+Ans.  Example of creating a Hive Table:- 
+
+      CREATE TABLE [IF not Exits] employees (
+            id INT,
+            emp_name STRING,
+            sal FLOAT,
+            deptno INT,
+            manager_id INT,
+            YearofExp INT)
+            ROW FORMAT DELIMITED
+            FIELDS TERMINATED BY ',';
+            
+
+10.What do you mean by describe and describe extended and describe 
 formatted with respect to database and table
+Ans. Describe displays the list of columns for the given DB/table. 
+      Extended/Formatted is Optional.
+      If extended is specified , it will display all the metadata for the specified table/DB.
+      If formatted is specified, it will display the metadata in a tabular format.
+      
 11.How to skip header rows from a table in Hive?
+Ans. Here is the example :-
+      CREATE external TABLE if not exists exmp(
+      exmp_name STRING,
+      exmp_id INT,
+       idf int,
+      date date,
+      count int)
+      ROW FORMAT DELIMITED
+      FIELDS TERMINATED BY ','
+      LOCATION "PATH/TO/FILE.csv"
+      TBLPROPERTIES("skip.header.line.count"="2");
+      
 12.What is a hive operator? What are the different types of hive operators?
+Ans. Hive provides various builtin operators for the data operations to be implemented on the tables present inside Apache Hive Warehouse. 
+      Hive Operators are used for the mathematical operations on operands. it returns specific value as per the logic applied. 
+      
+      Different types of Hive Operators :- 
+      a. Relational Operators :- ==,!=,<,>,<=,>=,IS NULL, IS NOT NULL, LIKE , REGEXP
+      b. Arthematic Operators :- +,-,*,/,%,&,|,^.~
+      c. logical Operators :- AND, OR, NOT,!
+      d. String Operators :- A||B (Concatenation)
+      e. Operator for Complex Types :- A[n] - Array, M[key,value] - return the values corresponding to the key (Key-value), a.b - returns b field of a structure.
+  
 13.Explain about the Hive Built-In Functions
+Ans. hive have following builtin Functions :-
+      a. round()
+      b. floor()
+      c. ceil()
+      d. rand(),rand(int)
+      e. concat()
+      f. substr()
+      g. upper()
+      h. ucase()
+      j. lower()
+      k. lcase()
+      l. trim()
+      m. ltrim()
+      n. rtrim()
+      o. regexp_replace()
+      p. size()
+      q. cast()
+      r. form_unixtime()
+      s. to_data()
+      t. year()
+      u. month()
+      v. day()
+      w. get_json_object()
+      
+      Aggregate Functions :-
+            a. count()
+            b. sum()
+            c. avg()
+            d. min()
+            e. max()
 14. Write hive DDL and DML commands.
-15.Explain about SORT BY, ORDER BY, DISTRIBUTE BY and
-CLUSTER BY in Hive.
-16.Difference between "Internal Table" and "External Table" and Mention
-when to choose “Internal Table” and “External Table” in Hive?
+Ans.  DDL Commands :- 
+            1. create :- used with db/table
+            2. show :- db/table/table properties/partitions/function index.
+            3. describe :- db/table/view
+            4. use :-  DB
+            5. drop :- DB/table
+            6. alter :- DB/Table
+            7. truncate :- table
+      DML Commands :-
+            1. LOAD 
+            2. SELECT 
+            3. INSERT
+            4. DELETE
+            5. UPDATE
+            6. Export
+            7. Import
+      
+15.Explain about SORT BY, ORDER BY, DISTRIBUTE BY and CLUSTER BY in Hive.
+Ans. sort by and order by are same but 
+      here are few difference :- 
+      a. sort by may use multiple reducers for the final output  and it only guarantees ordering of rows with in a reducer. 
+      b. order by :- uses single reducer to guarantee total order in the output and limit can be used to minimize the sort time
+      
+      DISTRIBUTE BY / CLUSTER BY :- is used to distribute the data into multiple reducers based on the key columns. 
+      
+      Cluster by is a short-cut for both distribute by and Sort By.
+      
+16.Difference between "Internal Table" and "External Table" and Mention when to choose “Internal Table” and “External Table” in Hive?
 17.Where does the data of a Hive table get stored?
 18.Is it possible to change the default location of a managed table?
-19.What is a metastore in Hive? What is the default database provided by
-Apache Hive for metastore?
+19.What is a metastore in Hive? What is the default database provided by Apache Hive for metastore?
 20.Why does Hive not store metadata information in HDFS?
-21.What is a partition in Hive? And Why do we perform partitioning in
-Hive?
+21.What is a partition in Hive? And Why do we perform partitioning inHive?
 
-22.What is the difference between dynamic partitioning and static
-partitioning?
+22.What is the difference between dynamic partitioning and static partitioning?
 23.How do you check if a particular partition exists?
 24.How can you stop a partition form being queried?
 25.Why do we need buckets? How Hive distributes the rows into buckets?
