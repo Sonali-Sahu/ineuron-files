@@ -112,7 +112,18 @@ Storage Desc Params:
         serialization.format    ,                   
 Time taken: 0.236 seconds, Fetched: 35 row(s)
 
-
+PS C:\Users\sonal> cd C:\docker_folder\HiveDockerSetup
+PS C:\docker_folder\HiveDockerSetup> docker cp AgentLogingReport.csv namenode:AgentLogingReport.csv
+PS C:\docker_folder\HiveDockerSetup> docker exec -it namenode bash
+root@7ae262842071:/# hdfs dfs -mkdir -p /data/
+root@7ae262842071:/# hdfs dfs -put AgentLogingReport.csv /data/AgentLogingReport.csv
+2023-04-22 12:42:03,800 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+root@7ae262842071:/# ls
+AgentLogingReport.csv  bin   dev            etc     hadoop-data  lib    media  opt   root  run.sh  srv  tmp  var
+KEYS                   boot  entrypoint.sh  hadoop  home         lib64  mnt    proc  run   sbin    sys  usr
+root@7ae262842071:/# exit
+exit
+PS C:\docker_folder\HiveDockerSetup> docker-compose down
 
 
 
