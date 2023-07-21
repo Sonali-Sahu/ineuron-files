@@ -28,3 +28,16 @@ mysql> use quotes;
 Database changed
 mysql> show tables;
 Empty set (0.00 sec)
+
+
+mysql> create TABLE IF not EXISTS kafka_sql_cassandra(
+    ->   id int(10) NOT NULL,
+    ->   prod_name VARCHAR(50) NOT NULL DEFAULT '',
+    ->   expiry_date date,
+    ->   rate int(10)  NOT NULL,
+    ->   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ->   updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    ->   PRIMARY KEY(id)
+    -> )
+    -> ;
+Query OK, 0 rows affected, 2 warnings (0.05 sec)
