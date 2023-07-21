@@ -41,3 +41,9 @@ mysql> create TABLE IF not EXISTS kafka_sql_cassandra(
     -> )
     -> ;
 Query OK, 0 rows affected, 2 warnings (0.05 sec)
+
+CREATE USER 'newuser'@'%' IDENTIFIED BY 'newpassword';
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> GRANT ALL PRIVILEGES ON quotes.* to 'newuser'@'%';
+Query OK, 0 rows affected (0.01 sec)
