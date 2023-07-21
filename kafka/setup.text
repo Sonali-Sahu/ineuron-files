@@ -1,1 +1,15 @@
 # list of commands to setup kafka environment
+
+Start docker compose
+ docker-compose -f docker-compose.yml up -d
+
+get list of topics from kafka container
+docker exec kafka kafka-topics --bootstrap-server kafka:9092 --list
+
+if topic is not available, create 1
+docker exec kafka kafka-topics --bootstrap-server kafka:9092 --create --if-not-exists --topic my-topic-1 --replication-factor 1 --partitions 1
+
+execution step output:- 
+
+PS C:\docker_folder\HiveDockerSetup> docker exec kafka kafka-topics --bootstrap-server kafka:9092 --create --if-not-exists --topic my-topic-1 --replication-factor 1 --partitions 1
+Created topic my-topic-1.
