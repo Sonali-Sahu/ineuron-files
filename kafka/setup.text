@@ -21,3 +21,27 @@ Connected to cloudinfra at 127.0.0.1:9042
 [cqlsh 6.0.0 | Cassandra 4.0.10 | CQL spec 3.4.5 | Native protocol v5]
 Use HELP for help.
 cassandra@cqlsh>
+
+-- TO GET all the keyspaces
+ DESCRIBE KEYSPACES;
+
+-- to drop keyspace
+drop keyspace tutorialspoint;
+
+-- to create keyspace
+ CREATE KEYSPACE kafkalearning WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1};
+
+ -- use keyspaces
+
+  use kafkalearning;
+
+  --create table
+
+   CREATE TABLE IF NOT EXISTS kafka_cassandra_table ( id int,prod_name text,expiry_date date, rate int , created_at TIMESTAMP, u
+pdated_at  TIMESTAMP, PRIMARY KEY(id) );
+
+-- get all the tables
+
+ DESCRIBE TABLES;
+
+ 
