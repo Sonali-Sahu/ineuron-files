@@ -47,3 +47,12 @@ Query OK, 0 rows affected (0.02 sec)
 
 mysql> GRANT ALL PRIVILEGES ON quotes.* to 'newuser'@'%';
 Query OK, 0 rows affected (0.01 sec)
+
+
+
+--- Login as new user    
+
+mysql -u newuser -p
+Enter password: give password here
+
+
