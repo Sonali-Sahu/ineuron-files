@@ -13,3 +13,11 @@ execution step output:-
 
 PS C:\docker_folder\HiveDockerSetup> docker exec kafka kafka-topics --bootstrap-server kafka:9092 --create --if-not-exists --topic my-topic-1 --replication-factor 1 --partitions 1
 Created topic my-topic-1.
+
+
+Connect with cassandra container:-
+PS C:\docker_folder\HiveDockerSetup> docker exec -it hivedockersetup-cassandra-1 bash -c "cqlsh -u cassandra -p cassandra"
+Connected to cloudinfra at 127.0.0.1:9042
+[cqlsh 6.0.0 | Cassandra 4.0.10 | CQL spec 3.4.5 | Native protocol v5]
+Use HELP for help.
+cassandra@cqlsh>
