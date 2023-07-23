@@ -1,0 +1,17 @@
+from pyspark.sql import SparkSession
+
+#spark = SparkSession.builder.appName("Dataframe Example").config("spark.some.config.option","some_value").getOrCreate()
+
+spark = SparkSession.builder.appName("demo").getOrCreate()
+
+# read json file 
+
+df = spark.read.json("json_data.json")
+
+df.show()
+
+df.write.parquet("Employees.parquet")
+
+df.filter(df.stream=="JAVA").show()
+
+df.filter(df.stream=="JAVA").write.parquet("JavaEmployees.parquet")
