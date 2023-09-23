@@ -7,6 +7,17 @@ create database my_db;
 #use hive db
 use my_db;
 
+
+# More About Database
+
+create database if not exists demo3 with dbproperties ('creator'='test_user','date'='23-09-22') ;
+
+create database if not exists demo2 comment "This is a demo database" ;
+
+# describe db
+
+describe database extended demo2;
+
 #to check DWH location in HDFS (hadoop)
 abc@994915bf825e:~/workspace$ hadoop fs -ls /
 Found 2 items
